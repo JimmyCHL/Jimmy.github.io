@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,700;0,900;1,500&display=swap" rel="stylesheet">
+
+    <style>
+        html {
+            overflow-x: hidden;
+        }
+        
+        body {
+            margin: 0px;
+            font-family: 'Red Hat Display', sans-serif;
+            box-sizing: border-box;
+            background-color: #05081b;
+            overflow-x: hidden;
+        }
+        
+        .outer-container {
+            width: 95vw;
+            margin: 0 auto;
+        }
+        /*header*/
+        
+        .first-header object {
+            margin: 6vh 0 0 5vh;
+        }
+        /*first-section*/
+        
+        .first-section {
+            display: flex;
+            margin-top: 60px;
+            width: 95%;
+            margin: 60px auto;
+        }
+        
+        .left-picture {
+            flex-basis: 30%;
+            background-image: url(./assets/illustration-hero-left.svg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            right: 55px;
+            top: 14px;
+        }
+        
+        .middle-content {
+            color: white;
+            background: url(./assets/bg-hero-squiggle.svg) no-repeat;
+            background-position: top;
+            background-size: 95%;
+            flex: 40%;
+            text-align: center;
+        }
+        
+        .middle-content div {
+            height: 150px;
+        }
+        
+        .middle-content div img {
+            position: relative;
+            top: 38px;
+        }
+        
+        h1#first-title {
+            font-size: 2.4em;
+            line-height: 50px;
+        }
+        
+        h1#first-title span {
+            color: rgb(13, 236, 236);
+        }
+        
+        p#title-paragraph {
+            font-size: 14px;
+            word-spacing: 1px;
+            letter-spacing: 0.5px;
+            opacity: 0.5;
+            line-height: 22px;
+            margin-top: -15px;
+        }
+        
+        .right-picture {
+            flex-basis: 30%;
+            background-image: url(./assets/illustration-hero-right.svg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            left: 61px;
+            top: 17px;
+        }
+        /*Second section*/
+        
+        .second-section {
+            margin-top: 240px;
+            display: flex;
+            color: white;
+            justify-content: space-evenly;
+        }
+        
+        .sec-sec-inside-div {
+            flex-basis: 18%;
+        }
+        
+        .sec-sec-inside-div div {
+            background: #04496b;
+            height: 150px;
+            width: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 32px;
+        }
+        
+        .sec-sec-inside-div h4 {
+            letter-spacing: 1px;
+            font-size: 15px;
+            margin-top: 32px;
+        }
+        
+        .sec-sec-inside-div p {
+            font-size: 12px;
+            width: 110%;
+            opacity: 0.5;
+            line-height: 21px;
+            word-spacing: 1px;
+        }
+        
+        .sec-sec-inside-div.move {
+            position: relative;
+            bottom: 71px;
+        }
+        /*third section*/
+        
+        section.third-section {
+            color: white;
+            text-align: center;
+            margin-top: 160px;
+        }
+        
+        section.third-section h3 {
+            letter-spacing: 1px;
+            word-spacing: 2px;
+            font-size: 24px;
+        }
+        
+        section.third-section p {
+            padding: 0 400px;
+            font-size: 14px;
+            line-height: 25px;
+            word-spacing: 1px;
+            opacity: 0.5;
+        }
+        /*fourth section*/
+        
+        section.fourth-section {
+            display: flex;
+            justify-content: center;
+            margin-top: 130px;
+        }
+        
+        .four-sec-left-div {
+            height: 370px;
+            flex-basis: 30%;
+            background: #04496b;
+            ;
+            margin: 10px;
+            color: white;
+            position: relative;
+            border-radius: 5px;
+            padding: 28px
+        }
+        
+        .four-sec-right-div {
+            height: 389px;
+            flex-basis: 35%;
+            background: rgb(49, 245, 229);
+            margin: 10px;
+            position: relative;
+            border-radius: 5px;
+            padding: 34px 28px 28px 28px;
+            top: -13px;
+        }
+        
+        .four-sec-left-div img {
+            position: absolute;
+            width: 40px;
+            top: -20px;
+            left: 25px;
+        }
+        
+        .four-sec-left-div h5 {
+            font-size: 18px;
+            margin-top: 21px;
+        }
+        
+        .four-sec-left-div p {
+            font-size: 14px;
+            line-height: 22px;
+            margin-top: -10px;
+            opacity: 0.5;
+        }
+        
+        .four-sec-left-div h4 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-top: 18px;
+        }
+        
+        .four-sec-left-div ul {
+            list-style: inside url(./assets/icon-check-cyan.svg);
+            padding: 0;
+            margin-top: -15px;
+        }
+        
+        .four-sec-left-div ul>li {
+            margin-bottom: 18px;
+        }
+        
+        .four-sec-left-div ul>li>span {
+            margin-left: 7px;
+        }
+        
+        .four-sec-right-div img {
+            width: 45px;
+            position: absolute;
+            top: -27px;
+            left: 28px;
+        }
+        
+        .four-sec-right-div h5 {
+            font-size: 18px;
+            font-weight: 800;
+        }
+        
+        .four-sec-right-div p {
+            font-size: 14px;
+            line-height: 22px;
+            margin-top: -10px;
+            opacity: 0.75;
+        }
+        
+        .four-sec-right-div h4 #s1 {
+            font-size: 32px;
+            font-weight: 900;
+            margin-top: 18px;
+        }
+        
+        .four-sec-right-div h4 #s2 {
+            font-size: 12px;
+            opacity: 0.5;
+            position: relative;
+            top: -8px;
+        }
+        
+        .four-sec-right-div ul {
+            list-style: inside url(./assets/icon-check.svg);
+            padding: 0;
+            margin-top: 2px;
+            font-weight: 600;
+        }
+        
+        .four-sec-right-div ul>li {
+            margin-bottom: 18px;
+        }
+        
+        .four-sec-right-div ul>li>span {
+            margin-left: 7px;
+        }
+        /*last footer*/
+        
+        .last-footer {
+            text-align: center;
+            background-image: url(./assets/bg-footer-squiggle.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 361px;
+            background-position: center;
+        }
+        
+        .last-footer div {
+            width: 95vw;
+            margin: 0 auto;
+            position: relative;
+            top: 142px;
+        }
+        
+        .last-footer h3 {
+            color: white;
+            font-size: 26px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            word-spacing: 1px;
+        }
+        
+        .last-footer #i1 {
+            font-weight: 600;
+            height: 38px;
+            width: 240px;
+            padding-left: 28px;
+            border: none;
+            border-radius: 100px;
+            background: #04496b;
+            margin-right: 10px;
+            outline: none;
+        }
+        
+        .last-footer #i2 {
+            background: rgb(49, 245, 229);
+            height: 38px;
+            width: 124px;
+            font-weight: 700;
+            border-radius: 100px;
+        }
+        
+        .last-footer #i2:hover {
+            cursor: pointer;
+            background: #2196f3;
+        }
+        /* for  tablet    */
+        
+        @media (max-width: 960px) {
+            /*header*/
+            .first-header object {
+                margin: 6vh 0 0 2vh;
+            }
+            /*first-section*/
+            .left-picture {
+                background-size: contain;
+            }
+            .right-picture {
+                background-size: contain;
+            }
+            .middle-content {
+                margin-top: 29px;
+            }
+            .middle-content div img {
+                position: relative;
+                top: 38px;
+            }
+            h1#first-title {
+                font-size: 1.8em;
+                line-height: 35px;
+                margin-left: -38px;
+                margin-right: -38px;
+            }
+            p#title-paragraph {
+                font-size: 12px;
+                line-height: 15px;
+                margin: -15px -29px;
+            }
+            /*Second section*/
+            .second-section {
+                margin-top: 130px;
+                flex-direction: column;
+                text-align: center;
+            }
+            .sec-sec-inside-div {
+                margin: auto;
+            }
+            .sec-sec-inside-div div {
+                float: left;
+                margin-right: -13px;
+            }
+            .sec-sec-inside-div p {
+                width: 451px;
+                text-align: left;
+                position: relative;
+                right: -67px;
+            }
+            .sec-sec-inside-div.move {
+                position: relative;
+                bottom: 71px;
+                bottom: 0px;
+                margin: 30px auto;
+            }
+            .sec-sec-inside-div.move2 {
+                position: relative;
+                right: 70px;
+            }
+            /*third section*/
+            section.third-section p {
+                padding: 0px 131px;
+            }
+            /*fourth section*/
+            section.fourth-section {
+                flex-direction: column;
+                margin-top: 56px;
+            }
+            .four-sec-left-div {
+                max-width: 400px;
+                margin: auto;
+                margin-bottom: 55px;
+            }
+            .four-sec-right-div {
+                max-width: 400px;
+                margin: auto;
+            }
+        }
+        /*for mobile*/
+        
+        @media (max-width:700px) {
+            /*first-header*/
+            .first-header {
+                text-align: center;
+            }
+            /*first-section*/
+            .first-section {
+                position: relative;
+                display: block;
+            }
+            .first-section::before {
+                content: "";
+                background-image: url(./assets/illustration-hero-mobile.png);
+                position: relative;
+                height: 283px;
+                width: 100%;
+                z-index: -1;
+                background-size: contain;
+                background-repeat: no-repeat;
+                display: block;
+                margin: auto;
+            }
+            .left-picture {
+                display: none;
+            }
+            .right-picture {
+                display: none;
+            }
+            .middle-content {
+                margin-top: 29px;
+                background: unset;
+            }
+            h1#first-title {
+                font-size: 2.6em;
+                line-height: 44px;
+                padding: 0 71px;
+            }
+            h1#first-title span {
+                color: rgb(13, 236, 236);
+            }
+            p#title-paragraph {
+                margin: -15px 64px;
+                line-height: 20px;
+                margin-bottom: 10px;
+            }
+            /*Second section*/
+            .second-section {
+                margin-top: -20px;
+            }
+            .sec-sec-inside-div div {
+                float: unset;
+                margin: auto;
+            }
+            .sec-sec-inside-div p {
+                width: 244px;
+                right: 0;
+                text-align: center;
+            }
+            .sec-sec-inside-div.move {
+                bottom: 0px;
+            }
+            .sec-sec-inside-div.move2 {
+                right: 0px;
+            }
+            /*third-section*/
+            section.third-section p {
+                padding: 0px 91px;
+            }
+            /*last-footer*/
+            .last-footer {
+                height: 450px;
+            }
+            .last-footer h3 {
+                padding: 0px 60px;
+            }
+            .last-footer #i1 {
+                width: 83%;
+                display: block;
+                margin: auto;
+            }
+            .last-footer #i2 {
+                height: 40px;
+                display: block;
+                margin: auto;
+                width: 90%;
+                font-size: 18px;
+                margin-top: 10px;
+            }
+            /*small screen*/
+            @media (max-width:400px) {
+                /*first-section*/
+                .middle-content {
+                    margin-top: -78px;
+                }
+                h1#first-title {
+                    font-size: 2.2em;
+                }
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <main class="outer-container">
+        <header class="first-header">
+            <object data="./assets/logo.svg"></object>
+        </header>
+        <!--end header-->
+        <section class="first-section">
+            <div class="left-picture"></div>
+            <div class="middle-content">
+                <h1 id="first-title">Get paid for the work you <span>love</span> to do.</h1>
+                <p id="title-paragraph">The 9-5 grind is so last century. We believe in living life on your own teams. Whether you're looking to escape the rat race or set up a side huslte. We've got you covered.</p>
+                <div><img src="./assets/icon-scroll.svg"></div>
+            </div>
+            <div class="right-picture"></div>
+        </section>
+        <!--end first-section-->
+        <section class="second-section">
+            <div class="sec-sec-inside-div move">
+                <div><img src="./assets/illustration-passions.svg" width="100px" height="100px"></div>
+                <h4>Indulge your passions</h4>
+                <p>Your passions shouldn't be just for the weekend. Earn a living doing what you love.</p>
+            </div>
+            <div class="sec-sec-inside-div move2">
+                <div><img src="./assets/illustration-financial-freedom.svg" width="100px" height="100px"></div>
+                <h4>Gain financial freedom</h4>
+                <p>Start making money work for you. There's nothing quite like earning while you sleep.</p>
+            </div>
+            <div class="sec-sec-inside-div move">
+                <div><img src="./assets/illustration-lifestyle.svg" width="100px" height="100px"></div>
+                <h4>Choose your lifestyle</h4>
+                <p>Own your daily schedule. Fancy a lie-in? Got for it! Take charge of your week.</p>
+            </div>
+            <div class="sec-sec-inside-div move2">
+                <div><img src="./assets/illustration-work-anywhere.svg" width="100px" height="100px"></div>
+                <h4>Work from anywhere</h4>
+                <p>Selling online means not being pinned down. Want to work AND travel? Go for it!</p>
+            </div>
+        </section>
+        <!--end second section-->
+        <section class="third-section">
+            <h3>Our pricing plans </h3>
+            <p>We only make money when our creators make money. Our plans are always affordable, and it's completely free to get started.</p>
+        </section>
+        <!--end third section-->
+        <section class="fourth-section">
+            <div class="four-sec-left-div">
+                <img src="./assets/icon-free.svg" width="100px">
+                <h5>Dip your toe</h5>
+                <p>Just getting started? No problem at all! Our free plan will take your a long way.</p>
+                <h4>Free</h4>
+                <ul>
+                    <li><span>Unlimited products</span></li>
+                    <li><span>Basic analytics</span></li>
+                    <li><span>Limited marketplace exposure</span></li>
+                    <li><span>10% fee per transaction</span></li>
+                </ul>
+            </div>
+            <div class="four-sec-right-div">
+                <img src="./assets/icon-paid.svg" width="100px">
+                <h5>Dive right in</h5>
+                <p>Ready for the big time? Our paid plan will help you take your business to the next level. </p>
+                <h4><span id="s1">$25.00</span> <span id="s2">/ month</span></h4>
+                <ul>
+                    <li><span>Custom domain</span></li>
+                    <li><span>Advanced analytics and reports</span></li>
+                    <li><span>High marketplace visibility</span></li>
+                    <li><span>5% fee per transaction</span></li>
+                </ul>
+            </div>
+
+        </section>
+        <!--end fourth section-->
+    </main>
+    <footer class="last-footer">
+        <div>
+            <h3>Get notified when we launch</h3>
+            <input id="i1" type="email" name="email" placeholder="Email address" />
+            <input id="i2" type="submit" value="Get notified" />
+        </div>
+    </footer>
+    <!--end footer-->
+</body>
+
+</html>
