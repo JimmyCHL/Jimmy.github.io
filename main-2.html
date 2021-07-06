@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@700&display=swap" rel="stylesheet">
+</head>
+<style>
+    html {
+        overflow-x: hidden;
+    }
+    
+    body {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        background-color: #121725;
+        font-family: 'Chivo', sans-serif;
+    }
+    
+    .outer-for-background {
+        max-width: 1300px;
+        background-image: url(./desktop/image-host.jpg);
+        width: 96%;
+        max-height: 500px;
+        margin: 6% auto 0% auto;
+        background-size: 58% 100%;
+        background-repeat: no-repeat;
+        background-position: right;
+        position: relative;
+    }
+    
+    .right-corner-icon {
+        background-image: url(./desktop/bg-pattern-dots.svg);
+        width: 100%;
+        height: 115%;
+        background-repeat: no-repeat;
+        position: absolute;
+        background-size: 16.5% 17%;
+        background-position: 99.8% 92.5%;
+    }
+    /*header*/
+    
+    .top-header img {
+        width: 9%;
+        position: relative;
+        top: -16px;
+        left: 18px;
+    }
+    /*main*/
+    
+    main {
+        background: #121725;
+        width: 54.5%;
+        margin-left: 2%;
+        margin-top: -2.5%;
+    }
+    
+    #title {
+        padding-top: 5%;
+        font-size: 39px;
+        margin-right: -18px;
+        color: #54E6AF;
+        margin-bottom: 0;
+    }
+    
+    #second-title {
+        font-size: 0.9em;
+        color: #C2CBE5;
+        font-weight: 100;
+        margin: 0;
+        line-height: 28px;
+    }
+    
+    #search-box {
+        width: 96%;
+        max-width: 622px;
+        padding-left: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 100px;
+        background: #2C344B;
+        font-size: 16px;
+        border: unset;
+        outline: unset;
+        position: relative;
+        z-index: 1;
+        margin-top: 35px;
+    }
+    
+    .carousel {
+        display: flex;
+        width: 96%;
+        max-width: 622px;
+        justify-content: space-between;
+        text-align: center;
+        margin-top: 6%;
+    }
+    
+    .carousel-items {
+        flex-basis: 25%;
+    }
+    
+    .carousel-items img {
+        width: 92%;
+        height: 61%;
+        border-radius: 10px;
+    }
+    
+    .carousel-items h3 {
+        color: white;
+        font-weight: 100;
+        margin: 6px 0 0 0;
+        font-size: 17px;
+    }
+    
+    .carousel-items p {
+        color: #C2CBE5;
+        font-size: 15px;
+    }
+    
+    .carousel-items a {
+        text-decoration: none;
+        color: black;
+        background: #54E6AF;
+        display: block;
+        position: relative;
+        z-index: 1;
+        padding: 10px 0;
+        width: 91%;
+        margin: auto;
+        border-radius: 100px;
+        font-size: 12px;
+        font-weight: 700;
+    }
+    
+    .carousel-items a:hover {
+        background-color: #B3FFE2;
+    }
+    
+    .arrows1 .arrow-left {
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(135deg);
+    }
+    
+    .arrows2 .arrow-right {
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(-45deg);
+    }
+    
+    .arrows1 {
+        position: absolute;
+        top: 26%;
+        left: -3%;
+        z-index: 1;
+        border-radius: 100px;
+        border: unset;
+        cursor: pointer;
+        opacity: 0.6;
+    }
+    
+    .arrows2 {
+        position: absolute;
+        top: 26%;
+        left: 88%;
+        z-index: 1;
+        border-radius: 100px;
+        border: unset;
+        cursor: pointer;
+        opacity: 0.6;
+    }
+    
+    .arrows1:hover {
+        opacity: 1;
+    }
+    
+    .arrows2:hover {
+        opacity: 1;
+    }
+    
+    .last-footer {
+        margin-top: 10%;
+        margin-left: 2%;
+        display: flex;
+        justify-content: space-between;
+        width: 96%;
+        max-width: 587px;
+    }
+    
+    .last-footer img {
+        max-width: 100px;
+        max-height: 28px;
+        flex-basis: 20%;
+    }
+    
+    @media (max-width:959px) {
+        .outer-for-background {
+            width: 100%;
+            background-size: 93% 100%;
+            background-position: center;
+            margin-top: 118px;
+        }
+        .right-corner-icon {
+            width: 97%;
+            background-position: 98.5% 92.3%;
+            background-size: 25.5% 17%;
+        }
+        /*header*/
+        .top-header {
+            text-align: center;
+        }
+        .top-header img {
+            min-width: 131px;
+            margin-top: -1%;
+            margin-left: 2%;
+            top: -85px;
+        }
+        /*main*/
+        main {
+            width: 51.5%;
+        }
+        .carousel {
+            flex-wrap: wrap;
+        }
+        .carousel-items {
+            flex-basis: 50%;
+            margin-bottom: 24px;
+        }
+        .carousel-items h3 {
+            margin: 0;
+        }
+        .carousel-items p {
+            margin: 0 0 5px 0;
+        }
+        .arrows1 {
+            top: 101%;
+            left: -1%;
+            z-index: 2
+        }
+        .arrows2 {
+            top: -11%;
+            left: 89%;
+        }
+        .last-footer {
+            margin-top: 0;
+            width: 35%;
+            flex-wrap: wrap;
+            position: absolute;
+            top: 112%;
+            left: 60%;
+            margin-left: -38px;
+        }
+        .last-footer img {
+            max-width: 110px;
+            max-height: 34px;
+            flex-basis: 51%;
+            margin-bottom: 34px;
+        }
+    }
+    
+    @media (max-width:500px) {
+        .outer-for-background {
+            background-image: url('./mobile/image-host.jpg');
+            max-width: 400px;
+            max-height: 415px;
+        }
+        .right-corner-icon {
+            background-size: 36.5% 17%;
+        }
+        .top-header img {
+            min-width: 96px;
+            margin: 0px;
+            top: -66px;
+            margin-top: -10px;
+        }
+        main {
+            width: 56.5%;
+            margin-top: 123px;
+        }
+        .carousel {
+            flex-wrap: wrap;
+            position: absolute;
+        }
+        .carousel-items {
+            flex-basis: 50%;
+            margin-bottom: 24px;
+        }
+        .carousel-items h3 {
+            margin: 0;
+        }
+        .carousel-items p {
+            margin: 0 0 5px 0;
+        }
+        .arrows1 {
+            top: 101%;
+            left: -1%;
+            z-index: 2
+        }
+        .arrows2 {
+            top: -11%;
+            left: 89%;
+        }
+        .last-footer {
+            width: 77%;
+            top: 221%;
+            left: 20%;
+        }
+    }
+</style>
+
+<body>
+    <div class="outer-for-background">
+        <div class="right-corner-icon"></div>
+        <header class="top-header">
+            <img src="./desktop/logo.svg" />
+        </header>
+        <main>
+            <p id="title">DISCOVER NEW PODCASTS</p>
+            <h4 id="second-title">Search for your next favorite Podcat.</h4>
+            <form>
+                <input id="search-box" type="search" name="genre" placeholder="Genre">
+            </form>
+            <div class="carousel">
+                <div class="carousel-items" style="position:relative;">
+                    <button class="arrows1"><span class="arrow-left"></span></button>
+                    <img src="./pictures/128583_00_2x.jpg" width="100px" />
+                    <h3>Podcast Title</h3>
+                    <p>Genre</p>
+                    <a href="#">Listen</a>
+                </div>
+                <div class="carousel-items">
+                    <img src="./pictures/how-seniors-can-benefit-from-listening-to-music.jpg" width="100px" />
+                    <h3>Podcast Title</h3>
+                    <p>Genre</p>
+                    <a href="#">Listen</a>
+                </div>
+                <div class="carousel-items">
+                    <img src="./pictures/singer-man-performance-singing-microphone-expressive-artist-tries-very-hard-please-viewer-gestures_183219-5485.jpg" width="100px" />
+                    <h3>Podcast Title</h3>
+                    <p>Genre</p>
+                    <a href="#">Listen</a>
+                </div>
+                <div class="carousel-items" style="position:relative;">
+                    <button class="arrows2"><span class="arrow-right"></span></button>
+                    <img src="./pictures/Taylor-Swift-with-Guitar-Wallpaper.jpg" width="100px" />
+                    <h3>Podcast Title</h3>
+                    <p>Genre</p>
+                    <a href="#">Listen</a>
+                </div>
+            </div>
+            <footer class="last-footer">
+                <img src="desktop/spotify.svg" />
+                <img src="desktop/apple-podcast.svg" />
+                <img src="desktop/google-podcasts.svg" />
+                <img src="desktop/pocket-casts.svg" />
+            </footer>
+        </main>
+
+    </div>
+
+</body>
+
+</html>
