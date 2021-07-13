@@ -86,6 +86,7 @@ function myFun() {
             let overviewButton = document.querySelectorAll(".specific-intro h3")[0];
             overviewButton.addEventListener('click', () => {
                 planetInfo1.innerHTML = handlebar1Template(planetFound);
+                document.querySelectorAll(".specific-intro h3")[0].style = "background:orange;"
                 selfRun();
             });
 
@@ -94,6 +95,7 @@ function myFun() {
             let internalButton = document.querySelectorAll(".specific-intro h3")[1];
             internalButton.addEventListener('click', () => {
                 planetInfo1.innerHTML = handlebar3Template(planetFound);
+                document.querySelectorAll(".specific-intro h3")[1].style = "background:orange;"
                 selfRun();
             });
 
@@ -103,7 +105,8 @@ function myFun() {
             surfaceButton.addEventListener('click', () => {
                 planetInfo1.innerHTML = handlebar4Template(planetFound);
                 document.querySelector("#planet-img img").style = "position:relative; top:-47px;";
-                selfRun()
+                document.querySelectorAll(".specific-intro h3")[2].style = "background:orange;"
+                selfRun();
             });
         }
 
@@ -113,6 +116,7 @@ function myFun() {
         let overviewButton = document.querySelectorAll(".specific-intro h3")[0];
         overviewButton.addEventListener('click', () => {
             planetInfo1.innerHTML = handlebar1Template(planetFound);
+            document.querySelectorAll(".specific-intro h3")[0].style = "background:orange;"
             selfRun();
         });
 
@@ -121,6 +125,7 @@ function myFun() {
         let internalButton = document.querySelectorAll(".specific-intro h3")[1];
         internalButton.addEventListener('click', () => {
             planetInfo1.innerHTML = handlebar3Template(planetFound);
+            document.querySelectorAll(".specific-intro h3")[1].style = "background:orange;"
             selfRun();
         });
 
@@ -129,6 +134,7 @@ function myFun() {
         surfaceButton.addEventListener('click', () => {
             planetInfo1.innerHTML = handlebar4Template(planetFound);
             document.querySelector("#planet-img img").style = "position:relative; top:-47px;";
+            document.querySelectorAll(".specific-intro h3")[2].style = "background:orange;"
             selfRun();
         });
 
