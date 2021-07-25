@@ -3,575 +3,480 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
 
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <title>Frontend Mentor | Pomodoro app</title>
+    <link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
     <style>
-        * {
+        body {
+            font-family: 'Yantramanav', sans-serif;
+        }
+        
+        .outter-div {
             padding: 0;
             margin: 0;
-            font-family: 'Roboto', sans-serif;
         }
         
-        body {
-            background-color: #1E2140;
-        }
-        /* ---------------------------mobile--------------------------- */
-        /*cookie*/
-        
-        .wrapper {
-            position: fixed;
-            z-index: 1000;
-            background: #8080807a;
-            width: 100vw;
-            height: 100vh;
-            top: 0;
-            display: none;
+        header {
+            background: black;
         }
         
-        .active-cookies1 {
-            display: block;
-        }
-        
-        div#notice-cookies {
-            background: white;
-            width: 300px;
-            height: 269px;
-            margin: auto;
-            margin-top: 235px;
-            border-radius: 20px;
-        }
-        
-        img.img-cookies {
-            width: 100px;
-            display: block;
-            margin: auto;
-            position: relative;
-            top: -48px;
-            margin-bottom: -35px;
-        }
-        
-        h3.title-cookies {
-            text-align: center;
-        }
-        
-        p.paragraph {
-            width: 90%;
-            margin: auto;
-            text-align: center;
-            margin-top: 7px;
-        }
-        
-        button#btn-accept-cookies {
-            display: block;
-            margin: auto;
-            margin-top: 10px;
-            padding: 10px 92px;
-            font-size: 20px;
-            background: gray;
-            border: none;
-            cursor: pointer;
-            border-radius: 10px;
-        }
-        
-        button#btn-accept-cookies:active {
-            box-shadow: inset 1px 1px 4px black;
-        }
-        
-        a.link {
-            display: block;
-            text-align: center;
-            margin-top: 10px;
-            text-decoration: none;
-        }
-        /*transition button part*/
-        
-        #outer-container.active {
-            opacity: 0.5;
-        }
-        
-        #main-container {
-            width: 98%;
-            margin: auto;
-        }
-        
-        #title {
-            text-align: center;
-            margin-top: 40px;
-            color: #E6E6E6;
-        }
-        
-        #selectors {
-            display: flex;
-            padding: 3px;
-            justify-content: space-evenly;
-            width: 360px;
-            margin: 30px auto 0 auto;
-            background: #16132f;
-            border-radius: 50px;
-            position: relative;
-        }
-        
-        #move-div {
-            position: absolute;
-            background: #F87070;
-            height: 76%;
-            width: 21%;
-            top: 13%;
-            left: 1.5%;
-            z-index: 0;
-            border-radius: 50px;
-            padding: 0 17px;
-            box-shadow: -2px -2px 3px #ffffff69, 2px 2px 10px #000000f0;
-            transition: left 0.3s linear;
-        }
-        
-        .buttons {
-            padding: 15px 15px;
-            background: transparent;
-            cursor: pointer;
-            border: none;
-            color: #ffffff80;
-            font-weight: 500;
-            flex: 1;
-            z-index: 1;
-            font-size: 13px;
-            letter-spacing: 0.5px;
-        }
-        
-        #pomodoro-button {
-            color: black;
-        }
-        /*timer section*/
-        
-        #first-circle {
-            background: #16132f;
-            position: relative;
-            width: 340px;
-            height: 340px;
-            border-radius: 50%;
-            margin: 50px auto 0 auto;
-            box-shadow: -24px -24px 60px #ffffff1c, 24px 24px 50px #0000004f, -20px -29px 37px #ffffff2e inset;
-        }
-        
-        #second-circle {
-            position: absolute;
-            width: 310px;
-            height: 310px;
-            background: #16132f;
-            border-radius: 50%;
-            top: 4.5%;
-            left: 4.5%;
-        }
-        
-        #second-circle-circle {
-            transition: stroke-dashoffset 1s linear;
-        }
-        
-        #third-circle {
-            position: absolute;
-            top: 2.25%;
-            left: 2.55%;
-        }
-        
-        #timer-number {
-            position: absolute;
-            top: 29%;
-            left: 16.0%;
-            font-size: 516%;
-            font-weight: 900;
-            color: #ffffffeb;
-        }
-        
-        #trigger-button {
-            position: absolute;
-            top: 69%;
-            left: 32.0%;
-            color: #ffffffe0;
-            font-weight: 400;
-            font-size: 0.9em;
-            letter-spacing: 18px;
-            cursor: pointer;
-            width: 118px;
-        }
-        
-        #trigger-button:hover {
-            box-shadow: 2px 2px 2px #00000094, -1px -1px 2px #ffffff91;
-        }
-        
-        #trigger-button:active {
-            box-shadow: 2px 2px 3px inset black, -1px -1px 3px inset #ffffff61;
-        }
-        
-        #trigger-button.class1 {
-            left: 32%;
-            width: 118px;
-        }
-        
-        #trigger-button.class2 {
-            left: 27%;
-            width: 148px;
-        }
-        
-        #trigger-button.class3 {
-            left: 32%;
-            width: 118px;
-        }
-        /* setting button section*/
-        
-        #settings {
-            background: transparent;
-            border: none;
-            display: block;
-            margin: 56px auto 0 auto;
-            cursor: pointer;
-        }
-        
-        #settings img {
-            width: 28px;
-        }
-        /*#settings img:hover {
-            box-shadow: 2px 2px 2px black, -1px -1px 2px white;
-        }*/
-        
-        #settings img:active {
-            box-shadow: inset 2px 2px 2px black, inset -1px -1px 1px rgba(255, 255, 255, 0.644);
-        }
-        /*setting-box session*/
-        
-        #settings-box {
-            position: absolute;
-            z-index: 500;
-            width: 0;
-            height: 0;
-            overflow: hidden;
-            opacity: 0;
-            transition: opacity 1.2s ease-in;
-        }
-        
-        #real-box {
-            width: 360px;
-            height: 350px;
-            background: white;
-            margin: 127px auto 0 auto;
-            border-radius: 25px;
-        }
-        
-        #settings-box.active {
-            opacity: 1;
+        .nav-div-outter {
+            background: black !important;
+            padding: 0;
             width: 100%;
-            height: auto;
-            overflow: visible;
+            margin: auto;
+            color: white;
         }
         
-        #real-box-setting-title {
-            padding: 25px 25px 13px 25px;
-            font-size: 18px;
-            border-bottom: #808080c9 solid 1px;
+        .navbar-brand span {
+            display: inline-block;
+            font-size: 1em;
+            width: 23px;
+            color: black;
+            background: white;
+            margin-right: 5px;
+            text-align: center;
+            height: 26px;
+            font-weight: 900;
         }
         
-        #real-box #close-icon {
+        .nav-div {
+            width: 85%;
+            background: black;
+            margin: auto;
+        }
+        
+        #nav-item-selection {
+            display: flex;
+            width: 100%;
+        }
+        
+        i {
+            vertical-align: middle;
+            margin-right: 5px;
+            color: white;
+        }
+        
+        li#sing-in {
+            border-left: 1px gray solid;
+            flex: 3;
+        }
+        
+        li#sing-in a {
+            color: white;
+        }
+        
+        li.nav-item.items {
+            border-left: 1px gray solid;
+            flex: 1;
+            text-align: center;
+        }
+        
+        li.nav-item.items a {
+            color: white !important;
+        }
+        
+        .special-dropdown {
+            flex: 2;
+            border-left: 1px gray solid;
+        }
+        
+        .special-dropdown a {
+            color: white! important;
+        }
+        
+        form {
+            position: relative;
+        }
+        
+        .dropdown-toggle::after {
             float: right;
             position: relative;
-            top: -11%;
-            right: 6%;
+            top: 10px;
+        }
+        
+        .new-search {
+            color: black;
+            position: absolute;
+            right: 10px;
+            top: 10px;
             cursor: pointer;
+        }
+        
+        main.row.main {
+            width: 90%;
+            min-width: 992px;
+            margin: auto;
+        }
+        
+        div#first-line {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 18px;
+        }
+        
+        h1#web {
+            color: #000000a8;
+            font-size: 26px;
+        }
+        
+        h1#date {
+            color: #00000070;
+            font-size: 26px;
+            font-weight: 300;
+        }
+        
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        #content1 {
+            position: relative;
+        }
+        
+        .content1-intro {
+            position: absolute;
+            top: 44%;
+            width: 70%;
+            color: white;
+            left: 5%;
+        }
+        
+        .content1-intro p {
+            width: 95%;
+        }
+        
+        .content1-intro h5 {
+            border-left: red solid 2px;
+            padding-left: 10px;
+        }
+        
+        #content1 img {
+            width: 100%;
+        }
+        
+        .content2-intro {
+            position: absolute;
+            top: 61%;
+            left: 17px;
+        }
+        
+        .content2-group {
+            position: relative;
+        }
+        
+        .content2-intro {
+            position: absolute;
+        }
+        
+        .content2-intro h2 {
+            font-size: 16px;
+            color: white;
+        }
+        
+        .content2-intro h5 {
+            font-size: 12px;
+            color: white;
+            font-weight: 500;
+            border-left: red solid 2px;
             padding: 5px;
         }
         
-        #real-box #close-icon:hover {
-            box-shadow: 2px 2px 2px #0000008c;
+        #content2-1 .content2-intro {
+            top: 73%;
         }
         
-        #real-box #close-icon.active {
-            box-shadow: inset 2px 2px 2px #00000099;
+        #content2-3 .content2-intro h2 {
+            width: 95%;
         }
         
-        #real-box-setting-choices h3 {
-            padding: 12px 25px;
-            font-size: 12px;
-            letter-spacing: 1px;
+        div#content2-3 {
+            margin-top: 12px;
         }
         
-        #time-controller {
-            display: flex;
-            width: 86%;
-            margin: auto;
-            justify-content: space-between;
-            padding-bottom: 15px;
-            border-bottom: #808080c9 solid 1px;
+        div#content2-4 {
+            margin-top: 12px;
         }
         
-        .inputs {
-            width: 29%;
-            position: relative;
-        }
-        
-        .inputs label {
-            display: block;
-            font-size: 10px;
-            margin-top: 9px;
-            font-weight: 700;
-            color: #00000080;
-        }
-        
-        .inputs input {
-            width: 90%;
-            padding: 10px 0 10px 10px;
-            margin-top: 10px;
-            background: #E2E2E2;
-            border: none;
-            border-radius: 5px;
-            font-size: 0.8em;
-            font-weight: 900;
-            outline: none;
-        }
-        
-        .up-arrow {
-            position: absolute;
-            top: 49%;
-            left: 81%;
-            height: 15px;
-            width: 14px;
-            cursor: pointer;
-        }
-        
-        .down-arrow {
-            position: absolute;
-            top: 78%;
-            left: 81%;
-            height: 15px;
-            width: 14px;
-            cursor: pointer;
-        }
-        
-        .down-arrow:active,
-        .up-arrow:active {
-            box-shadow: inset 0.5px 0.5px 1px black, -2px -2px 2px white inset;
-        }
-        
-        .font-items {
-            width: 86%;
-            border-bottom: #808080c9 solid 1px;
-            margin: auto;
-        }
-        
-        .font-items h5 {
-            padding: 25px 25px 25px 0;
-            font-size: 12px;
-            letter-spacing: 1px;
-            display: inline-block;
-        }
-        
-        #font-settings {
-            float: right;
-            margin-top: 4%;
-            margin-right: -1%;
-        }
-        
-        #font-setting1,
-        #font-setting2,
-        #font-setting3 {
-            padding: 10px;
-            border-radius: 50%;
-            border: none;
+        h1#sport {
+            margin-top: 25px;
+            margin-bottom: 15px;
+            color: #000000ad;
+            border-left: yellow solid 3px;
+            padding-left: 10px;
+            font-size: 26px;
             font-weight: 500;
-            margin: 0 3px;
-            cursor: pointer;
         }
         
-        #font-setting1 {
-            background: black;
-            color: white;
+        .sport-pics {
+            height: 45%;
         }
         
-        .color-items {
-            width: 86%;
-            margin: auto;
+        #side {
+            background: gray;
+            height: 100%;
+            min-height: 300px;
         }
         
-        .color-items h5 {
-            padding: 25px 25px 25px 0;
-            font-size: 12px;
-            letter-spacing: 1px;
-            display: inline-block;
-        }
-        
-        #color-settings {
-            float: right;
-            margin-top: 4%;
-            margin-right: -1%;
-        }
-        
-        #color-setting1,
-        #color-setting2,
-        #color-setting3 {
-            padding: 12px;
-            border-radius: 50%;
-            border: none;
+        .bottom-label {
+            margin-top: 25px;
+            margin-bottom: 20px;
+            color: #00000085;
+            border-left: yellow solid 3px;
+            padding-left: 10px;
+            font-size: 16px;
             font-weight: 500;
-            margin: 0 3px;
-            cursor: pointer;
-            height: 36px;
-            width: 36px
         }
         
-        #color-setting1 {
-            background: #F87070;
+        @media screen and (max-width:1300px) {
+            main.row.main {
+                width: 100%;
+            }
+            .nav-div {
+                width: 100%;
+            }
+            .special-dropdown {
+                text-align: center;
+            }
+            .content1-intro {
+                width: 80%;
+            }
+            .content2-intro {
+                top: 54%;
+            }
+            #content2-1 .content2-intro {
+                top: 63%;
+            }
         }
         
-        #color-setting2 {
-            background: rgb(43, 230, 220);
+        @media screen and (max-width: 1100px) {
+            #content2-1 .content2-intro {
+                top: 50%;
+            }
         }
         
-        #color-setting3 {
-            background: rgb(224, 107, 224);
+        @media screen and (max-width: 991px) {
+            li#sing-in {
+                text-align: center;
+            }
+            .dropdown-toggle::after {
+                float: none;
+                display: inline-block;
+                top: 0px;
+            }
+            form {
+                right: -1%;
+                top: -6px;
+            }
+            .content1-intro {
+                width: 75%;
+            }
+            .content2-intro {
+                position: absolute;
+                top: 47%;
+                left: 17px;
+            }
         }
         
-        #color-setting1 img {
-            vertical-align: top;
-        }
-        
-        #color-setting2 img {
-            visibility: hidden;
-            vertical-align: top;
-        }
-        
-        #color-setting3 img {
-            visibility: hidden;
-            vertical-align: top;
-        }
-        
-        #Apply {
-            position: relative;
-            padding: 10px 45px;
-            border-radius: 50px;
-            border: none;
-            background: #F87070;
-            font-weight: 700;
-            color: white;
-            top: 5%;
-            left: 33%;
-            cursor: pointer;
-        }
-        
-        #Apply:hover {
-            box-shadow: 2px 2px 15px black, inset 1px 1px 5px #ffffff52;
-        }
-        
-        #Apply.active {
-            box-shadow: 2px 2px 7px black inset;
-        }
-        /*-----------------------------------------------------tablet and desktop-----------------------------------------*/
-        
-        @media screen and (min-width:767px) {
-            #selectors {
-                margin: 45px auto 0 auto;
+        @media screen and (max-width: 576px) {
+            .nav-div-outter {
+                width: 100%;
+            }
+            .nav-div {
+                width: 100%;
+            }
+            li#sing-in {
+                text-align: center;
+            }
+            div#first-line {
+                flex-wrap: wrap;
+            }
+            main.row.main {
+                min-width: auto;
+            }
+            h1#web {
+                width: 100%;
+                text-align: center;
+            }
+            h1#date {
+                width: 100%;
+                text-align: center;
+            }
+            div#content2-1 {
+                margin-top: 12px;
+            }
+            div#content2-2 {
+                margin-top: 12px;
+            }
+            .content1-intro p {
+                width: 95%;
+                display: none;
+            }
+            .content2-intro {
+                top: 62%;
+            }
+            #content2-1 .content2-intro {
+                top: 70%;
+            }
+            #content2-4 .content2-intro {
+                top: 57%;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="wrapper active-cookies1" id="wrapper-cookies">
-        <div class="notice-cookies active-cookies" id="notice-cookies">
-            <img src="https://image.flaticon.com/icons/png/512/541/541732.png" alt=" " class="img-cookies" />
-            <h3 class="title-cookies">Cookies</h3>
-            <p class="paragraph">We use our own and third-party cookies to obtain statistical data on the navigation of our users and improve our services.</p>
-            <button class="btn-cookies" id="btn-accept-cookies">Agree</button>
-            <a class="link" href="/cookies.html">Cookie Notice</a>
-        </div>
-    </div>
-    <!--<div class="notice-cookies-background active-cookies" id="notice-cookies-background"></div> no need this-->
-    <div id="settings-box">
-        <div id="real-box">
-            <h1 id="real-box-setting-title">Settings</h1>
-            <img id="close-icon" src="./assets/icon-close.svg">
-            <div id="real-box-setting-choices">
-                <h3>time(minutes)</h3>
-                <div id="time-controller">
-                    <div class="inputs" id="pomodoro-input">
-                        <label>pomodoro</label>
-                        <input type="text" value="25" />
-                        <img class="up-arrow" id="pomodoro-up-arrow" src="./assets/icon-arrow-up.svg">
-                        <img class="down-arrow" id="pomodoro-down-arrow" src="./assets/icon-arrow-down.svg">
-                    </div>
-                    <div class="inputs" id="shortbreak-input">
-                        <label>short break</label>
-                        <input type="text" value="5" />
-                        <img class="up-arrow" id="shortbreak-up-arrow" src="./assets/icon-arrow-up.svg">
-                        <img class="down-arrow" id="shortbreak-down-arrow" src="./assets/icon-arrow-down.svg">
-                    </div>
-                    <div class="inputs" id="longbreak-input">
-                        <label>long break</label>
-                        <input type="text" value="15" />
-                        <img class="up-arrow" id="longbreak-up-arrow" src="./assets/icon-arrow-up.svg">
-                        <img class="down-arrow" id="longbreak-down-arrow" src="./assets/icon-arrow-down.svg">
-                    </div>
-                </div>
-                <div class="font-items">
-                    <h5>Font</h5>
-                    <div id="font-settings">
-                        <button id="font-setting1" style="background: black;
-                        color: white;">Aa</button>
-                        <button id="font-setting2">Aa</button>
-                        <button id="font-setting3">Aa</button>
-                    </div>
-                </div>
-                <div class="color-items">
-                    <h5>color</h5>
-                    <div id="color-settings">
-                        <button id="color-setting1"><img src="./assets/icon-check.svg"></button>
-                        <button id="color-setting2"><img src="./assets/icon-check.svg"></button>
-                        <button id="color-setting3"><img src="./assets/icon-check.svg"></button>
-                    </div>
-                </div>
-            </div>
-            <button id="Apply">Apply</button>
-        </div>
-    </div>
-    <div id="outer-container">
-        <main id="main-container">
-            <h1 id="title">pomodoro</h1>
-            <section id="selectors">
-                <div id="move-div"></div>
-                <button class="buttons" id="pomodoro-button" type="button">pomodoro</button>
-                <button class="buttons" id="short-break-button">short break</button>
-                <button class="buttons" id="long-break-button">long break</button>
-            </section>
-            <!--end selectors section-->
-            <section id="timer">
-                <div id="first-circle">
-                    <div id="second-circle">
-                        <svg id="third-circle" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" height="295px" width="295px">
-                        <circle id=second-circle-circle stroke-linecap="round" cx="50" cy="50" r="48.5" stroke="#F87070" stroke-width="3" fill="#16132f" stroke-dasharray="305" stroke-dashoffset="305" transform="rotate(270)" transform-origin="center"></circle>
-                        </svg>
-                        <h1 id="timer-number">25:00</h1>
-                        <h5 id="trigger-button">START</h5>
-                    </div>
-                </div>
-            </section>
-            <!-- end timer section-->
-            <button id="settings" type="button">
-               <img src="./assets/icon-settings.svg" width="100px">
-            </button>
-            <!--ending setting-->
-        </main>
-        <!--end main-->
-    </div>
-    <!--end outer-container-->
-    <p style="display:none;">
-        pomodoro short break long break start pause restart Settings Time (minutes) pomodoro short break long break Font Color Apply
-    </p>
 
-    <script src="./timer-Class.js"></script>
-    <script src="./indexSetting.js"></script>
-    <script src="./timeSetting.js"></script>
-    <script src="./cookies.js"></script>
+    <div class="container-fluid outter-div">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-div-outter ">
+                <div class="container-fluid nav-div">
+                    <a class="navbar-brand" href="#"><span>B</span><span>B</span><span>C</span></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="nav-item-selection">
+                            <li class="nav-item Sign-in" id="sing-in">
+                                <a class="nav-link" href="#"><i class="fas fa-user-circle"></i>sign in</a>
+                            </li>
+                            <li class="nav-item items">
+                                <a class="nav-link" href="#">News</a>
+                            </li>
+                            <li class="nav-item items">
+                                <a class="nav-link" href="#">Sport</a>
+                            </li>
+                            <li class="nav-item items">
+                                <a class="nav-link" href="#">Reel</a>
+                            </li>
+                            <li class="nav-item items">
+                                <a class="nav-link" href="#">Worklife</a>
+                            </li>
+                            <li class="nav-item items">
+                                <a class="nav-link" href="#">Travel</a>
+                            </li>
+                            <li class="nav-item items">
+                                <a class="nav-link" href="#">Future</a>
+                            </li>
+                            <li class="nav-item items">
+                                <a class="nav-link" href="#">Culture</a>
+                            </li>
+                            <li class="nav-item dropdown special-dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      More
+                    </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <i class="fas fa-search new-search"></i>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="row main">
+            <div class="col-sm-12" id='first-line'>
+                <h1 id="web">Welcome to BBC.com</h1>
+                <h1 id="date">Saturday, 24 July</h1>
+            </div>
+            <section id="section-1" class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-6" id="content1">
+                        <img src="./_119564625_hafnaoui_getty.jpg" width="100px">
+                        <div class="content1-intro">
+                            <h2>Hunt for survivors after deadly India floods</h2>
+                            <p>Heavy rains have battered India's western coast, leaving dozens dead and prompting mass evacuation</p>
+                            <h5>INDIA</h5>
+                        </div>
+                    </div>
+                    <div class="col-sm-6" id="content2">
+                        <div class="row">
+                            <div class="col-sm-6 content2-group" id="content2-1">
+                                <img src="./Guide-to-New-Sports-at-the-Tokyo-Olympics.jpeg" width="100px">
+                                <div class="content2-intro">
+                                    <h2>Australian cities hit by anti-lockdown protests</h2>
+                                    <h5>AUSTRALIA</h5>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 content2-group" id="content2-2"><img src="./olympic.jpg" width="100px">
+                                <div class="content2-intro">
+                                    <h2>First Test: South Africa lead Lions in fast and physical first half</h2>
+                                    <h5>RUGBY UNION</h5>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 content2-group" id="content2-3"><img src="./c24f3111b3b555d8d1a944a4c8f0d197.jpg" width="100px">
+                                <div class="content2-intro">
+                                    <h2>No sign of final victim in Miami building collapse</h2>
+                                    <h5>US & CANADA</h5>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 content2-group" id="content2-4"><img src="./OIP.jpg" width="100px">
+                                <div class="content2-intro">
+                                    <h2>Golds, shock exits and high temperatures on day in Tokyo</h2>
+                                    <h5>OLYMPICS</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="section-2" class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1 id="sport">Sport</h1>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <img src="./OIP (1).jpg" class="sport-pics">
+                                <h1>Sport 1</h1>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+                                    make a type specimen book..</p>
+                                <h5 class="bottom-label">SPORT</h5>
+                            </div>
+                            <div class="col-sm-4" class="sport-pics">
+                                <img src="./australia-startup-stats-scaled.jpg" class="sport-pics">
+                                <h1>Sport 2</h1>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+                                    make a type specimen book..</p>
+                                <h5 class="bottom-label">UNION</h5>
+                            </div>
+                            <div class="col-sm-4" class="sport-pics">
+                                <img src="./inpho_01521925-scaled.jpg" class="sport-pics">
+                                <h1>Sport 3</h1>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+                                    make a type specimen book..</p>
+                                <h5 class="bottom-label">OLYMPIC</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div id="side"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
 
 </body>
 
